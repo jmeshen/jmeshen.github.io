@@ -129,11 +129,9 @@ a:active {
 @media screen and (max-device-width: 480px) {
 	
 	#container {
-		width: auto;
-	}
-	
-	#words {
 		width: 340px;
-		}
+		margin: 0 auto;
+		
+	}
 
 	}
