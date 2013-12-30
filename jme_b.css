@@ -119,3 +119,11 @@ a:active {
 	text-decoration: none;
 	color: #268BD2;
 }
+
+@media only screen and (max-device-width: 640px) {
+
+	#words {
+		width: 340px;
+		}
+
+	}
