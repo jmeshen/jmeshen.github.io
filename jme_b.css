@@ -123,7 +123,7 @@ a:active {
 @media only screen and (max-device-width: 640px) {
 
 	#container {
-		width: 100%;
+		width: 650px;
 	}
 	
 	#words {
