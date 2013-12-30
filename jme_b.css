@@ -120,14 +120,14 @@ a:active {
 	color: #268BD2;
 }
 
-@media only screen and (max-device-width: 640px) {
-
+@media screen and (max-width: 640px) {
+	
 	#container {
 		width: auto;
 	}
 	
 	#words {
 		width: 340px;
-	}
+		}
 
 	}
