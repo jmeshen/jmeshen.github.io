@@ -50,7 +50,7 @@ table {
 /* my CSS */
 
 body {
-	background: url('crossword.png'); /*Thanks to subtlepatterns.com and Ideawebme*/
+	background: url('../img/crossword.png'); /*Thanks to subtlepatterns.com and Ideawebme*/
 	text-align: center;
 }
 #container {
