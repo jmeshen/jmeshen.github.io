@@ -54,7 +54,7 @@ body {
   /*background: url('../img/crossword.png');*/ /*Thanks to subtlepatterns.com and Ideawebme*/
   text-align: center;
 }
-section {
+main {
   height: 100vh;
 }
 #logo img {
