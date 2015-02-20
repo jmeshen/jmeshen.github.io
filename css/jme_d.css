@@ -54,9 +54,12 @@ body {
   /*background: url('../img/crossword.png');*/ /*Thanks to subtlepatterns.com and Ideawebme*/
   text-align: center;
 }
-section {
+main {
   height: 100vh;
 }
+section {
+}
+
 #logo img {
   width: 40%;
   max-width: 300px;
@@ -65,7 +68,7 @@ section {
 header {
   margin-top: 10%;
 }
-header li {
+nav li {
   display: inline-block;
   padding: 7px;
 }
@@ -78,9 +81,14 @@ header img {
   max-width: 650px;
   margin: 0 auto; 
   line-height: 2em;
+
 } 
 #about {
   padding: 5% 0;
+
+  background: url('../img/jme-pic.png') 50% 0 repeat fixed;
+  min-height: 500px;
+  -webkit-filter: grayscale(70%) opacity(0.8);
 }
 h1 {
   font-size: 5rem;
