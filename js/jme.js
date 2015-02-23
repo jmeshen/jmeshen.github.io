@@ -1,5 +1,7 @@
 $(document).ready(function() {
-  $('#fullpage').fullpage();
+  $('#fullpage').fullpage({
+    responsive: 700
+  });
   today = new Date();
   curTime = today.getHours();
   //console.log(curTime);
