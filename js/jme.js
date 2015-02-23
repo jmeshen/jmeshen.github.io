@@ -57,7 +57,7 @@ function updateLandingWebkit(curTime) {
     $('#landing').css({'background': '-webkit-linear-gradient(top, rgb(255, 210, 113), rgb(178, 209, 231))'});
   } else {
     $('#fn-greeting').html('good evening');
-    $('#landing').css({'background': '-webkit-linear-gradient(top, rgb(21, 20, 20), rgb(136, 72, 57))'});
+    $('#landing').css({'background': '-webkit-linear-gradient(top, rgb(21, 20, 20), rgb(151, 46, 22))'});
   }
 }
 function updateLandingFirefox(curTime) {
@@ -74,7 +74,7 @@ function updateLandingFirefox(curTime) {
     $('#landing').css({'background': '-moz-linear-gradient(top, rgb(255, 210, 113), rgb(178, 209, 231))'});
   } else {
     $('#fn-greeting').html('good evening');
-    $('#landing').css({'background': '-moz-linear-gradient(top, rgb(21, 20, 20), rgb(136, 72, 57))'});
+    $('#landing').css({'background': '-moz-linear-gradient(top, rgb(21, 20, 20), rgb(151, 46, 22))'});
   }
 }
 function updateLandingIE(curTime) {
@@ -91,7 +91,7 @@ function updateLandingIE(curTime) {
     $('#landing').css({'background': '-ms-linear-gradient(top, rgb(255, 210, 113), rgb(178, 209, 231))'});
   } else {
     $('#fn-greeting').html('good evening');
-    $('#landing').css({'background': '-ms-linear-gradient(top, rgb(21, 20, 20), rgb(136, 72, 57))'});
+    $('#landing').css({'background': '-ms-linear-gradient(top, rgb(21, 20, 20), rgb(151, 46, 22))'});
   }
 }
 function updateLandingOpera(curTime) {
@@ -108,7 +108,7 @@ function updateLandingOpera(curTime) {
     $('#landing').css({'background': '-o-linear-gradient(top, rgb(255, 210, 113), rgb(178, 209, 231))'});
   } else {
     $('#fn-greeting').html('good evening');
-    $('#landing').css({'background': '-o-linear-gradient(top, rgb(21, 20, 20), rgb(136, 72, 57))'});
+    $('#landing').css({'background': '-o-linear-gradient(top, rgb(21, 20, 20), rgb(151, 46, 22))'});
   }
 }
 
