@@ -54,8 +54,8 @@ body {
   /*background: url('../img/crossword.png');*/ /*Thanks to subtlepatterns.com and Ideawebme*/
   text-align: center;
 }
-main {
-  height: 100vh;
+#landing {
+  background: #fff;  
 }
 #logo img {
   width: 40%;
@@ -73,14 +73,18 @@ header img {
   width: 58%;
   max-width: 250px;
 }
-#words {
+.words {
   width: 88%;
-  max-width: 650px;
+  max-width: 800px;
   margin: 0 auto; 
   line-height: 2em;
-} 
-#about {
-  padding: 5% 0;
+}
+#bio {
+  text-align: left;
+}
+.words li {
+  display: inline-block;
+  color: rgb(187, 187, 172);
 }
 h1 {
   font-size: 5rem;
@@ -89,26 +93,26 @@ h1 {
   font-family: 'Merriweather Sans', 'Lucida Grande', sans-serif;
 
 }
-
 h2, h3 {
   font-size: 2em;
   color: #59747F;
   /* font-family: 'Droid Serif', 'Lucida Bright', serif;  */
+  font-family: 'Merriweather Sans', 'Lucida Grande', sans-serif;
 }
 h3 {
   font-size: 1.5em;
 }
-
+#bot-section {
+  position: relative;
+  bottom: -50%;
+}
 #links {
   padding: 15px;
 }
-
 #links li {
   display: inline;
-  margin: 2px 2px;  
-  font-family: 'Droid Serif', 'Lucida Bright', serif;
+  margin: 2px 10px;  
 }
-
 a {
     -webkit-transition: color .5s;
     -moz-transition:    color .5s;
@@ -151,8 +155,51 @@ a:active {
   border: 4px solid black;
 }
 #jme {
-  width: 90%;
-  border-radius: 20px;
+  width: 30%;
+  border-radius: 12px;
+  float: left;
+  margin-right: 1%;
+}
+.arrow-down {
+  width: 0;
+  height: 0;
+  border-left: 44px solid transparent;
+  border-right: 44px solid transparent;
+  border-top: 50px solid #ccc;
+  margin: 0 auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 6%;
+}
+#fn-greeting {
+  visibility: hidden;
+}
+#fn-i-am {
+  margin-top: 3%;
+  visibility: hidden;
+}
+#about {
+  background: rgb(24, 49, 95);
+}
+#about p {
+  color: rgb(187, 187, 172);
+}
+#projects {
+  background: #282828;
+}
+#projects img {
+  max-width: 1280px;
+  width: 100%;
+}
+#projects h2 {
+  position: relative;
+  top: 6%;
+  font-size: 3em;
+  color: #939393;
+}
+#contact {
+  text-align: center;
 }
 /*Media Queries*/
 
@@ -162,3 +209,8 @@ a:active {
     font-size: 1.3em;
   }
 }
+
+/*TO-DO:
+ * clean up unused css
+ * refactor for DRYness
+ * */
