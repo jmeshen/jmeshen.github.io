@@ -81,6 +81,7 @@ header img {
 }
 #bio {
   text-align: left;
+  padding: 6%;
 }
 .words li {
   display: inline-block;
@@ -165,7 +166,7 @@ a:active {
   height: 0;
   border-left: 44px solid transparent;
   border-right: 44px solid transparent;
-  border-top: 50px solid #ccc;
+  border-top: 50px solid #59747F; 
   margin: 0 auto;
   position: absolute;
   left: 0;
@@ -190,7 +191,7 @@ a:active {
 }
 #projects img {
   max-width: 1280px;
-  width: 100%;
+  width: 80%;
 }
 #projects h2 {
   position: relative;
@@ -207,6 +208,9 @@ a:active {
 @media only screen and (max-width: 605px) {
   header li {
     font-size: 1.3em;
+  }
+  h1 {
+    font-size: 4em;
   }
 }
 

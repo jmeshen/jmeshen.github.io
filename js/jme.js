@@ -3,7 +3,7 @@ $(document).ready(function() {
     responsive: 700
   });
   today = new Date();
-  curTime = today.getHours();
+  var curTime = today.getHours();
   //console.log(curTime);
   checkBrowser();
   if (sBrowser == "Chrome" || sBrowser == "Safari") {
