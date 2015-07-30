@@ -1,7 +1,7 @@
 $(document).ready(function() {
-  $('#fullpage').fullpage({
-    responsive: 700
-  });
+  // $('#fullpage').fullpage({
+  //   responsive: 700
+  // });
   today = new Date();
   var curTime = today.getHours();
   //console.log(curTime);
@@ -22,11 +22,12 @@ $(document).ready(function() {
                   .animate({opacity: 1}, 1200);
   $("#fn-i-am").delay(1500).css({'opacity': '0', 'visibility': 'visible'})
                   .animate({opacity: 1}, 1200);
-  $(".arrow-down").hide().delay(3000).fadeIn('slow').delay(500).animate({bottom: "4%"});
+  // $(".arrow-down").hide().delay(3000).fadeIn('slow').delay(500).animate({bottom: "4%"});
 });
 
-$(".arrow-down").click(function(){
-  $.fn.fullpage.moveSectionDown();
+$(".arrow-down, .arrow-up").click(function(){
+  console.log('sliding down?');
+  $("#landing").slideToggle('slow');
 });
 
 var sBrowser, sUsrAg = navigator.userAgent;
