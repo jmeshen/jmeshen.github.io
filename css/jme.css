@@ -62,6 +62,13 @@ body {
   max-width: 300px;
   padding-top: 15px;
 }
+.first, .last {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
 header {
   margin-top: 10%;
 }
@@ -78,14 +85,24 @@ header img {
   max-width: 770px;
   margin: 0 auto;
   line-height: 2em;
+  text-align: left;
+}
+.bot-words {
+  max-width: 710px;
+  line-height: 2em;
+  text-align: left;
+}
+.bot-words img {
+  float: left;
+  width: 21%;
+  padding-right: 4%;
 }
 #bio {
   text-align: left;
   padding: 6%;
 }
-.words li {
+li {
   display: inline-block;
-  color: rgb(187, 187, 172);
 }
 h1 {
   font-size: 5rem;
@@ -132,7 +149,6 @@ a:visited {
 }
 a:hover {
   color: #FF8800;
-background-color: #FFFFFF;
   text-decoration: none;
 }
 a:active {
@@ -162,16 +178,22 @@ a:active {
   margin-right: 1%;
 }
 .arrow-down {
-  width: 0;
-  height: 0;
-  border-left: 44px solid transparent;
-  border-right: 44px solid transparent;
-  border-top: 50px solid #59747F;
-  margin: 0 auto;
+  opacity: 0;
+  color: #59747F;
   position: absolute;
   left: 0;
   right: 0;
   bottom: 6%;
+  animation: bounce 2s ease infinite 2s alternate;
+}
+.arrow-up {
+  opacity: 0;
+  color: #59747F;
+  position: relative;
+  left: 0;
+  right: 0;
+  top: 2%;
+  animation: bounce 6s ease infinite 2s alternate;
 }
 #fn-greeting {
   visibility: hidden;
@@ -183,24 +205,46 @@ a:active {
 #about {
   background: rgb(24, 49, 95);
 }
-#about p {
+#about p, #about li {
   color: rgb(187, 187, 172);
 }
 #projects {
-  background: #373333;
+  background: #EFEFEF;
+  padding: 3%;
+}
+#projects div {
+  display: inline-block;
+  width: 40%;
+  padding: 1%;
 }
 #projects img {
   max-width: 1280px;
-  width: 80%;
+  width: 100%;
+  box-shadow: 0px 2px 2px #777474;
 }
 #projects h2 {
   position: relative;
   top: 6%;
   font-size: 3em;
   color: #939393;
+  padding-bottom: 1%;
 }
 #contact {
   text-align: center;
+}
+#projects .descriptions {
+  display: none;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(4px);
+    opacity: 1; }
+  }
 }
 /*Media Queries*/
 
@@ -213,8 +257,3 @@ a:active {
     font-size: 4em;
   }
 }
-
-/*TO-DO:
- * clean up unused css
- * refactor for DRYness
- * */

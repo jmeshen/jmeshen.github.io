@@ -2,25 +2,27 @@
 <html>
 <head>
   <title>Jamie Shen | Software Developer</title>
-    <meta charset = "UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Jamie Shen is a NYC-based full stack software developer.">
-    <meta name="keywords" content="Jamie Shen, jmeshen, Software, Developer, Full Stack, Front-End, Engineer, Web, JavaScript">
-    <meta name="author" content="Jamie Shen">
-    <link rel="stylesheet" type="text/css" href="css/jme_d.css" >
-    <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" >
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic|Merriweather+Sans:400,700,700italic,800,800italic,400italic,300italic,300">
+  <meta charset = "UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Jamie Shen is a NYC-based full stack software developer.">
+  <meta name="keywords" content="Jamie Shen, jmeshen, Software, Developer, Full Stack, Front-End, Engineer, Web, JavaScript">
+  <meta name="author" content="Jamie Shen">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="css/jme.css" >
+  <!-- <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" > -->
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic|Merriweather+Sans:400,700,700italic,800,800italic,400italic,300italic,300">
 </head>
 
 <body>
   <div id="fullpage">
-    <div id="landing" class="section">
-        <h1 id="fn-greeting">hello there</h1>
-        <h2 id="fn-i-am">I'm Jamie Shen,<br><br>a software developer.</h2>
-        <br>
-      <div class="arrow-down"></div>
+    <div id="landing" class="section first">
+      <h1 id="fn-greeting">hello there</h1>
+      <h2 id="fn-i-am">I'm Jamie Shen,<br><br>a software developer.</h2>
+      <br>
+      <div class="fa fa-chevron-down fa-4x arrow-down"></div>
     </div>
     <div id="about" class="section">
+      <div class="fa fa-chevron-up fa-4x arrow-up"></div>
       <div class="words" id="bio">
         <h2>Who Am I?</h2>
         <p>Hailing from the suburbs of upstate New York, New York City has been my home for the last 14 years. <br>I am a curious builder of virtual space on a mission to build great things with great people. <br>When I'm not losing track of time in code, sometimes I moonlight as a <a href="https://soundcloud.com/jmeshen" target="_blank">musician</a>, take <a href="http://instagram.com/jmeshen" target="_blank">awful photos</a> with filters, and create geeky landmarks in Minecraft.</p><br>
@@ -54,38 +56,75 @@
     </div>
     <div id="projects" class="section">
       <h2>Projects</h2>
-      <div class="slide">
-        <a href="/pokemon" target="_blank"><img src="img/pokemon.png"></a>
-      </div>
-      <div class="slide">
-        <a href="/chakra" target="_blank"><img src="img/chakra.png"></a>
-      </div>
-      <div class="slide">
-        <a href="/motivate" target="_blank"><img src="img/motivate_b.png"></a>
-      </div>
-    </div>
-    <div class="section">
-      <h1>thanks for visiting</h1><br>
-      <div class="words">
-          <p>I am currently seeking a software engineering position in NYC. <br>If you think we'd get along and would like to send public words of 140 characters or less, <br>tweet me <a href="https://twitter.com/jmeshen">@jmeshen</a>, otherwise, say <a href="mailto:hello@jmeshen.com">hello at jmeshen.com</a>.</p>
-        </div>
-          <div id="links">
-            <h2>Links</h2><br>
-            <nav>
-              <ul>
-                <a href="https://github.com/jmeshen" target="_blank"><li>Github</li></a>
-                <a href="https://linkedin.com/in/jmeshen" target="_blank"><li>LinkedIn</li></a>
-                <a href="https://twitter.com/jmeshen" target="_blank"><li>Twitter</li></a>
-                <a href="http://blog.jmeshen.com" target="_blank"><li>Blog</li></a>
-                <a href="mailto:hello@jmeshen.com"><li>Email</li></a>
-              </ul>
-              <br><a href="/"><img src="img/js_logo_300.png"></a>
-            </nav>
+      <!-- <div class="proj-cont"> -->
+        <div>
+          <a href="http://www.quokka.chat" target="_blank"><img src="img/quokka.png"></a>
+          <div class="descriptions">
+          <h3>Quokka Chat</h3>
+          <p>A web app that facilitated focused discussions of educational YouTube videos.</p>
+          <p>Built with AngularJS, Node.js, Express.js, MongoDB, YouTube IFrame Player API, D3.js, and Socket.io</p>
           </div>
+        </div>
+        <div>
+          <img src="img/deetz.png">
+          <div class="descriptions">
+          <h3>Just Da Deetz Plz</h3>
+          <p>A Twitter bot that sends users an image containing a summary of a news article.</p>
+          <p>Built with AngularJS, Node.js, Express.js, Twitter API, Summarizer, GraphicsMagick, Socket.io, and Material Design.</p>
+          </div>
+        </div>
+        <div>
+          <a href="/pokemon" target="_blank"><img src="img/pokemon.png"></a>
+          <div class="descriptions">
+          <h3>Who's that Pokémon?</h3>
+          <p>Classic commercial break trivia reimagined into a web app.</p>
+          <p>Built with jQuery, localStorage, CSS filters, and pokeapi.co for Pokémon data.</p>
+          </div>
+        </div>
+        <div>
+          <a href="/chakra" target="_blank"><img src="img/chakra.png"></a>
+          <div class="descriptions">
+          <h3>Visualizing the 7 Chakras</h3>
+          <p>Fun color visualization of the chakras.</p>
+          <p>Built with jQuery, HTML, CSS, and data from mindbodygreen.com.</p>
+          </div>
+        </div>
+        <div>
+          <a href="/motivate" target="_blank"><img src="img/motivate_b.png"></a>
+          <div class="descriptions">
+          <h3>Motivate</h3>
+          <p>Just a collection of quotes I like.</p>
+          <p>Built with jQuery, localStorage, CSS filters, and pokeapi.co for Pokémon data.</p>
+          </div>
+        </div>
+      <!-- </div> -->
     </div>
+    <div class="section last">
+      <h1>thanks for visiting</h1><br>
+      <div class="bot-words">
+        <div>
+          <img src="img/js_logo_300.png">
+
+        </div>
+        <div>
+          <p>I am currently seeking a software engineering position in NYC. <br>If you think we'd get along and would like to send public words of 140 characters or less, tweet me <a href="https://twitter.com/jmeshen">@jmeshen</a>, otherwise, say <a href="mailto:hello@jmeshen.com">hello at jmeshen.com</a>.</p>
+          <nav>
+
+          <ul id="links">
+            <a href="mailto:hello@jmeshen.com"><li class="fa fa-envelope fa-3x"></li></a>
+            <a href="https://github.com/jmeshen" target="_blank"><li class="fa fa-github fa-3x"></li></a>
+            <a href="https://linkedin.com/in/jmeshen" target="_blank"><li class="fa fa-linkedin fa-3x"></li></a>
+            <a href="https://twitter.com/jmeshen" target="_blank"><li class="fa fa-twitter fa-3x"></li></a>
+            <a href="http://blog.jmeshen.com" target="_blank"><li class="fa fa-pencil-square-o fa-3x"></li></a>
+          </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="js/jme.js"></script>
-  <script src="js/jquery.fullPage.min.js"></script>
+  <!-- <script src="js/jquery.fullPage.min.js"></script> -->
 </body>
 
 </html>
