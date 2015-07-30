@@ -244,17 +244,21 @@ a:active {
   }
   100% {
     transform: translateY(4px);
-    opacity: 1; }
+    opacity: 1;
   }
 }
 /*Media Queries*/
 
 /*Mobile Portrait*/
-@media only screen and (max-width: 605px) {
-  header li {
-    font-size: 1.3em;
+@media screen and (max-width: 705px) {
+  #projects div {
+    width: 85%;
   }
-  h1 {
-    font-size: 4em;
+  .bot-words {
+    width: 78%;
+    padding-left: 7%;
+  }
+  .fa-3x {
+    font-size: 2.2em;
   }
 }
