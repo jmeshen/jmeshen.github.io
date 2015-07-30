@@ -203,6 +203,7 @@ a:active {
   visibility: hidden;
 }
 #about {
+  height: 73vh;
   background: rgb(24, 49, 95);
 }
 #about p, #about li {
