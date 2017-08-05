@@ -87,6 +87,9 @@ header img {
   line-height: 2em;
   text-align: left;
 }
+.words h2 {
+  margin-bottom: 0.5rem;
+}
 .bot-words {
   max-width: 710px;
   line-height: 2em;
