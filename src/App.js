@@ -5,34 +5,43 @@ import normalize from 'styled-normalize';
 
 const GlobalStyle = createGlobalStyle`
 ${normalize}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lato', sans-serif;
+}
+p {
+  line-height: 1.7;
+}
 body {
+  font-family: 'Roboto Slab', sans-serif;
+  color: ${(props) => (props.theme === 'dark' ? 'ivory' : '#212121')};
   background: ${(props) => {
     let gradient = '';
     switch (props.theme) {
-      case 'twilight':
-        gradient = 'rgb(0, 0, 0), rgb(38, 24, 86)';
+      case 'dark':
+        gradient = 'rgb(38, 24, 86), black';
         break;
       case 'morning':
-        gradient = 'rgb(180, 210, 236), rgb(255, 210, 113)';
+        gradient = 'rgb(255, 210, 113), rgb(180, 210, 236) ';
         break;
-      case 'afternoon':
-        gradient = 'rgb(255, 210, 113), rgb(178, 209, 231)';
+      case 'light':
+        gradient = 'white, rgb(255, 210, 113)';
         break;
       case 'evening':
-        gradient = 'rgb(21, 20, 20), rgb(17, 81, 121)';
+        gradient = 'rgb(17, 81, 121), rgb(21, 20, 20)';
         break;
       default:
         gradient = 'white';
     }
-    console.log('gradient? ', gradient);
-    return `linear-gradient(${gradient})`;
+    return `radial-gradient(${gradient})`;
   }};
-  font-family: 'Merriweather Sans', 'Lucida Grande', sans-serif;
   height: 100vh;
   margin: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  @media (max-width: 500px) {
+    align-items: baseline;
+  }
 }
 a {
   text-decoration: none;
@@ -48,10 +57,8 @@ a {
 const generateThemeBasedOnTime = () => {
   const date = new Date();
   const curTime = date.getHours();
-  if (curTime < 4) return 'twilight';
-  else if (curTime < 12) return 'morning';
-  else if (curTime < 17) return 'afternoon';
-  else return 'evening';
+  if (curTime < 17) return 'light';
+  else return 'dark';
 };
 class App extends React.Component {
   render() {
@@ -60,7 +67,9 @@ class App extends React.Component {
     return (
       <>
         <GlobalStyle theme={theme} />
-        <Card />
+        {/* <GlobalStyle theme="light" /> */}
+        <Card theme={theme} />
+        {/* <Card theme="light" /> */}
       </>
     );
   }
