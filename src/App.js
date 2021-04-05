@@ -15,24 +15,18 @@ body {
   font-family: 'Roboto Slab', sans-serif;
   color: ${(props) => (props.theme === 'dark' ? 'ivory' : '#212121')};
   background: ${(props) => {
-    let gradient = '';
+    let color = '';
     switch (props.theme) {
       case 'dark':
-        gradient = 'rgb(38, 24, 86), black';
-        break;
-      case 'morning':
-        gradient = 'rgb(255, 210, 113), rgb(180, 210, 236) ';
+        color = 'rgb(22,13,51)';
         break;
       case 'light':
-        gradient = 'white, rgb(255, 210, 113)';
-        break;
-      case 'evening':
-        gradient = 'rgb(17, 81, 121), rgb(21, 20, 20)';
+        color = 'rgba(255,210,113,0.5)';
         break;
       default:
-        gradient = 'white';
+        color = 'white';
     }
-    return `radial-gradient(${gradient})`;
+    return color;
   }};
   height: 100vh;
   margin: 0;
@@ -63,13 +57,10 @@ const generateThemeBasedOnTime = () => {
 class App extends React.Component {
   render() {
     const theme = generateThemeBasedOnTime();
-    console.log(theme);
     return (
       <>
         <GlobalStyle theme={theme} />
-        {/* <GlobalStyle theme="light" /> */}
         <Card theme={theme} />
-        {/* <Card theme="light" /> */}
       </>
     );
   }
