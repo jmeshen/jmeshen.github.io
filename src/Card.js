@@ -18,7 +18,7 @@ const CardContainer = styled.div`
   /* border-top: 5px solid gold; */
   /* border-bottom: 5px solid gold; */
   border-bottom: 5px solid;
-  border-color: ${(props) => (props.theme === 'dark' ? 'gold' : 'coral')};
+  border-color: ${(props) => (props.theme === 'dark' ? 'gold' : '#226c80')};
   padding: 20px;
 `;
 
@@ -32,7 +32,7 @@ const CardFooter = styled.div`
   align-items: center;
   a {
     padding: 3px;
-    margin-right: 8px;
+    margin-right: 10px;
   }
 `;
 
@@ -44,7 +44,7 @@ const Card = (props) => {
           Hi there, my name is Jamie. I&apos;m a Software Engineer based in NYC.
         </h1>
         <p>
-          I am full-stack engineer with a preference for the front-end. My
+          I am a full-stack engineer with a preference for the front-end. My
           skillset includes JavaScript, modern front-end technologies, and
           various video and design tools from a previous life.
         </p>

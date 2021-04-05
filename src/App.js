@@ -35,6 +35,7 @@ body {
   justify-content: center;
   @media (max-width: 500px) {
     align-items: baseline;
+    height: auto;
   }
 }
 a {
