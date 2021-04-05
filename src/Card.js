@@ -3,22 +3,22 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faSoundcloud,
-  faLinkedin,
   faInstagram,
   faGithub,
   faTwitter,
-  faGithubSquare,
-  faTwitterSquare,
   faLinkedinIn,
 } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
+import pattern from '../img/y-pattern.png';
 
 const CardContainer = styled.div`
-  background: white;
-  width: 100%;
+  /* background-image: url(${pattern}); */
+  /* width: 100%; */
   max-width: 500px;
-  border-top: 5px solid gold;
-  border-bottom: 5px solid gold;
+  /* border-top: 5px solid gold; */
+  /* border-bottom: 5px solid gold; */
+  border-bottom: 5px solid;
+  border-color: ${(props) => (props.theme === 'dark' ? 'gold' : 'coral')};
   padding: 20px;
 `;
 
@@ -36,15 +36,31 @@ const CardFooter = styled.div`
   }
 `;
 
-const Card = () => {
+const Card = (props) => {
   return (
-    <CardContainer>
+    <CardContainer theme={props.theme}>
       <CardContent>
-        <h1>Jamie Shen &middot; NYC</h1>
-        <h2>Software Engineer</h2>
+        <h1>
+          Hi there, my name is Jamie. I&apos;m a Software Engineer based in NYC.
+        </h1>
         <p>
-          I am an aspiring minimalist living with many things and a homebody
-          suffering from frequent wanderlust.
+          I am full-stack engineer with a preference for the front-end. My
+          skillset includes JavaScript, modern front-end technologies, and
+          various video and design tools from a previous life.
+        </p>
+        {/* <p>
+          If you asked me what I enjoyed most about my work, it would be turning
+          the uncertain into reality. If you asked me what I enjoyed most about
+          working on a team, it would be collaborating and turning designs into
+          pixel perfect representations on the web.
+        </p> */}
+        <p>
+          In the real world, I&apos;m an aspiring minimalist living with many
+          things and a homebody suffering from wanderlust.
+        </p>
+        <p>
+          Currently, I&apos;m looking to join a passionate team that is doing
+          meaningful work.
         </p>
       </CardContent>
       <CardFooter>
