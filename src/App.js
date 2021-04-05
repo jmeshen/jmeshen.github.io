@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Card from './Card';
-import { createGlobalStyle } from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMoon, faSun } from '@fortawesome/free-regular-svg-icons';
+import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
 import normalize from 'styled-normalize';
 
 const GlobalStyle = createGlobalStyle`
@@ -13,26 +15,14 @@ p {
 }
 body {
   font-family: 'Roboto Slab', sans-serif;
-  color: ${(props) => (props.theme === 'dark' ? 'ivory' : '#212121')};
-  background: ${(props) => {
-    let color = '';
-    switch (props.theme) {
-      case 'dark':
-        color = 'rgb(22,13,51)';
-        break;
-      case 'light':
-        color = 'rgba(255,210,113,0.5)';
-        break;
-      default:
-        color = 'white';
-    }
-    return color;
-  }};
+  color: ${(props) => props.theme.text};
+  background: ${(props) => props.theme.bg};
   height: 100vh;
   margin: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: .3s;
   @media (max-width: 500px) {
     align-items: baseline;
     height: auto;
@@ -40,7 +30,7 @@ body {
 }
 a {
   text-decoration: none;
-  color: dodgerblue;
+  color: ${(props) => `${props.theme.accent}AA`};
   transition: .3s;
   &:hover {
    color: coral; 
@@ -49,22 +39,67 @@ a {
 }
 `;
 
-const generateThemeBasedOnTime = () => {
-  const date = new Date();
-  const curTime = date.getHours();
-  if (curTime < 17) return 'light';
-  else return 'dark';
+const themeObj = {
+  light: {
+    text: '#212121',
+    accent: '#226c80',
+    bg: 'rgba(255,210,113,0.5)',
+  },
+  dark: {
+    text: 'ivory',
+    accent: '#ffd264',
+    bg: 'rgb(22,13,51)',
+  },
 };
-class App extends React.Component {
-  render() {
-    const theme = generateThemeBasedOnTime();
-    return (
-      <>
-        <GlobalStyle theme={theme} />
-        <Card theme={theme} />
-      </>
-    );
+
+const ToggleButton = styled.button`
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  float: right;
+  padding: 0.5rem;
+  @media (max-width: 500px) {
+    margin-top: 1rem;
   }
-}
+`;
+
+const App = () => {
+  const [mode, setMode] = useState('light');
+
+  useEffect(() => {
+    generateThemeModeBasedOnTime();
+  }, []);
+
+  const generateThemeModeBasedOnTime = () => {
+    const date = new Date();
+    const curTime = date.getHours();
+    if (curTime < 17) {
+      setMode('light');
+    } else {
+      setMode('dark');
+    }
+  };
+
+  const toggleMode = () => {
+    mode === 'light' ? setMode('dark') : setMode('light');
+  };
+
+  return (
+    <>
+      <ThemeProvider theme={mode === 'light' ? themeObj.light : themeObj.dark}>
+        <GlobalStyle />
+        <ToggleButton onClick={toggleMode}>
+          <FontAwesomeIcon icon={mode === 'light' ? faSun : faMoon} size="2x" />
+        </ToggleButton>
+
+        <Card />
+      </ThemeProvider>
+    </>
+  );
+};
 
 export default App;

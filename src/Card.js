@@ -9,17 +9,15 @@ import {
   faLinkedinIn,
 } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
-import pattern from '../img/y-pattern.png';
 
 const CardContainer = styled.div`
-  /* background-image: url(${pattern}); */
-  /* width: 100%; */
   max-width: 500px;
-  /* border-top: 5px solid gold; */
-  /* border-bottom: 5px solid gold; */
   border-bottom: 5px solid;
-  border-color: ${(props) => (props.theme === 'dark' ? 'gold' : '#226c80')};
+  border-color: ${(props) => props.theme.accent};
   padding: 20px;
+  .poppop {
+    color: ${(props) => props.theme.accent};
+  }
 `;
 
 const CardContent = styled.div`
@@ -36,24 +34,19 @@ const CardFooter = styled.div`
   }
 `;
 
-const Card = (props) => {
+const Card = () => {
   return (
-    <CardContainer theme={props.theme}>
+    <CardContainer>
       <CardContent>
         <h1>
-          Hi there, my name is Jamie. I&apos;m a Software Engineer based in NYC.
+          Hi there, my name is <span className="poppop">Jamie</span>. I&apos;m a
+          Software Engineer based in NYC.
         </h1>
         <p>
           I am a full-stack engineer with a preference for the front-end. My
           skillset includes JavaScript, modern front-end technologies, and
           various video and design tools from a previous life.
         </p>
-        {/* <p>
-          If you asked me what I enjoyed most about my work, it would be turning
-          the uncertain into reality. If you asked me what I enjoyed most about
-          working on a team, it would be collaborating and turning designs into
-          pixel perfect representations on the web.
-        </p> */}
         <p>
           In the real world, I&apos;m an aspiring minimalist living with many
           things and a homebody suffering from wanderlust.
