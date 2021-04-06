@@ -27,7 +27,7 @@ const GlobalStyle = createGlobalStyle`
     align-items: center;
     justify-content: center;
     transition: .3s;
-    @media (max-width: 500px) {
+    @media only screen and (max-width: 850px) {
       align-items: baseline;
       height: auto;
     }
@@ -79,7 +79,7 @@ const ToggleButton = styled.button`
   outline: inherit;
   float: right;
   padding: 0.5rem;
-  @media (max-width: 500px) {
+  @media only screen and (max-width: 850px) {
     margin-top: 1rem;
   }
 `;
