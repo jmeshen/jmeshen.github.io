@@ -39923,7 +39923,7 @@ var _styledComponents = _interopRequireWildcard(require("styled-components"));
 
 var _styledNormalize = _interopRequireDefault(require("styled-normalize"));
 
-var _templateObject, _templateObject2;
+var _templateObject, _templateObject2, _templateObject3;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -39945,7 +39945,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var GlobalStyle = (0, _styledComponents.createGlobalStyle)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n", "\nh1, h2, h3, h4, h5, h6 {\n  font-family: 'Lato', sans-serif;\n}\np {\n  line-height: 1.7;\n}\nbody {\n  font-family: 'Roboto Slab', sans-serif;\n  color: ", ";\n  background: ", ";\n  height: 100vh;\n  margin: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  transition: .3s;\n  @media (max-width: 500px) {\n    align-items: baseline;\n    height: auto;\n  }\n}\na {\n  text-decoration: none;\n  color: ", ";\n  transition: .3s;\n  &:hover {\n   color: coral; \n   transform: translateY(-3px);\n  }\n}\n"])), _styledNormalize.default, function (props) {
+var GlobalStyle = (0, _styledComponents.createGlobalStyle)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  ", "\n  h1, h2, h3, h4, h5, h6 {\n    font-family: 'Lato', sans-serif;\n  }\n  p {\n    line-height: 1.7;\n  }\n  body {\n    font-family: 'Roboto Slab', sans-serif;\n    color: ", ";\n    background: ", ";\n    height: 100vh;\n    margin: 0;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    transition: .3s;\n    @media only screen and (max-width: 850px) {\n      align-items: baseline;\n      height: auto;\n    }\n  }\n  a {\n    text-decoration: none;\n    color: ", ";\n    transition: .3s;\n    &:hover {\n    color: coral; \n    transform: translateY(-3px);\n    }\n  }\n"])), _styledNormalize.default, function (props) {
   return props.theme.text;
 }, function (props) {
   return props.theme.bg;
@@ -39954,21 +39954,24 @@ var GlobalStyle = (0, _styledComponents.createGlobalStyle)(_templateObject || (_
 });
 var themeObj = {
   light: {
-    text: '#212121',
-    accent: '#226c80',
-    bg: 'rgba(255,210,113,0.5)'
+    text: "#212121",
+    accent: "#226c80",
+    bg: "rgba(255,210,113,0.5)"
   },
   dark: {
-    text: 'ivory',
-    accent: '#ffd264',
-    bg: 'rgb(22,13,51)'
+    text: "ivory",
+    accent: "#ffd264",
+    bg: "rgb(22,13,51)"
   }
 };
+var wiggle = (0, _styledComponents.keyframes)(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(15deg);\n  }\n"])));
 
-var ToggleButton = _styledComponents.default.button(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n  background: none;\n  color: inherit;\n  border: none;\n  padding: 0;\n  font: inherit;\n  cursor: pointer;\n  outline: inherit;\n  float: right;\n  padding: 0.5rem;\n  @media (max-width: 500px) {\n    margin-top: 1rem;\n  }\n"])));
+var ToggleButton = _styledComponents.default.button(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n  animation: ", " 2s linear infinite alternate;\n  &:hover {\n    color: ", ";\n  }\n  background: none;\n  color: inherit;\n  border: none;\n  padding: 0;\n  font: inherit;\n  cursor: pointer;\n  outline: inherit;\n  float: right;\n  padding: 0.5rem;\n  @media only screen and (max-width: 850px) {\n    margin-top: 1rem;\n  }\n"])), wiggle, function (props) {
+  return "".concat(props.theme.accent, "AA");
+});
 
 var App = function App() {
-  var _useState = (0, _react.useState)('light'),
+  var _useState = (0, _react.useState)("light"),
       _useState2 = _slicedToArray(_useState, 2),
       mode = _useState2[0],
       setMode = _useState2[1];
@@ -39982,22 +39985,22 @@ var App = function App() {
     var curTime = date.getHours();
 
     if (curTime < 17) {
-      setMode('light');
+      setMode("light");
     } else {
-      setMode('dark');
+      setMode("dark");
     }
   };
 
   var toggleMode = function toggleMode() {
-    mode === 'light' ? setMode('dark') : setMode('light');
+    mode === "light" ? setMode("dark") : setMode("light");
   };
 
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_styledComponents.ThemeProvider, {
-    theme: mode === 'light' ? themeObj.light : themeObj.dark
+    theme: mode === "light" ? themeObj.light : themeObj.dark
   }, /*#__PURE__*/_react.default.createElement(GlobalStyle, null), /*#__PURE__*/_react.default.createElement(ToggleButton, {
     onClick: toggleMode
   }, /*#__PURE__*/_react.default.createElement(_reactFontawesome.FontAwesomeIcon, {
-    icon: mode === 'light' ? _freeRegularSvgIcons.faSun : _freeRegularSvgIcons.faMoon,
+    icon: mode === "light" ? _freeRegularSvgIcons.faSun : _freeRegularSvgIcons.faMoon,
     size: "2x"
   })), /*#__PURE__*/_react.default.createElement(_Card.default, null)));
 };
@@ -40046,7 +40049,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61510" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51623" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
