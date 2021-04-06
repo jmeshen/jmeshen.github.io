@@ -1,9 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import Card from './Card';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMoon, faSun } from '@fortawesome/free-regular-svg-icons';
-import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
-import normalize from 'styled-normalize';
+import React, { useState, useEffect } from "react";
+import Card from "./Card";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMoon, faSun } from "@fortawesome/free-regular-svg-icons";
+import styled, {
+  createGlobalStyle,
+  ThemeProvider,
+  keyframes,
+} from "styled-components";
+import normalize from "styled-normalize";
 
 const GlobalStyle = createGlobalStyle`
   ${normalize}
@@ -41,18 +45,31 @@ const GlobalStyle = createGlobalStyle`
 
 const themeObj = {
   light: {
-    text: '#212121',
-    accent: '#226c80',
-    bg: 'rgba(255,210,113,0.5)',
+    text: "#212121",
+    accent: "#226c80",
+    bg: "rgba(255,210,113,0.5)",
   },
   dark: {
-    text: 'ivory',
-    accent: '#ffd264',
-    bg: 'rgb(22,13,51)',
+    text: "ivory",
+    accent: "#ffd264",
+    bg: "rgb(22,13,51)",
   },
 };
 
+const wiggle = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(15deg);
+  }
+`;
+
 const ToggleButton = styled.button`
+  animation: ${wiggle} 2s linear infinite alternate;
+  &:hover {
+    color: ${(props) => `${props.theme.accent}AA`};
+  }
   background: none;
   color: inherit;
   border: none;
@@ -68,7 +85,7 @@ const ToggleButton = styled.button`
 `;
 
 const App = () => {
-  const [mode, setMode] = useState('light');
+  const [mode, setMode] = useState("light");
 
   useEffect(() => {
     generateThemeModeBasedOnTime();
@@ -78,22 +95,22 @@ const App = () => {
     const date = new Date();
     const curTime = date.getHours();
     if (curTime < 17) {
-      setMode('light');
+      setMode("light");
     } else {
-      setMode('dark');
+      setMode("dark");
     }
   };
 
   const toggleMode = () => {
-    mode === 'light' ? setMode('dark') : setMode('light');
+    mode === "light" ? setMode("dark") : setMode("light");
   };
 
   return (
     <>
-      <ThemeProvider theme={mode === 'light' ? themeObj.light : themeObj.dark}>
+      <ThemeProvider theme={mode === "light" ? themeObj.light : themeObj.dark}>
         <GlobalStyle />
         <ToggleButton onClick={toggleMode}>
-          <FontAwesomeIcon icon={mode === 'light' ? faSun : faMoon} size="2x" />
+          <FontAwesomeIcon icon={mode === "light" ? faSun : faMoon} size="2x" />
         </ToggleButton>
 
         <Card />
