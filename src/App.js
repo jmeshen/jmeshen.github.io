@@ -26,7 +26,7 @@ const GlobalStyle = createGlobalStyle`
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: .3s;
+    transition: ${(props) => `${props.ready ? "0.3s" : "0s"} ease`};
     @media only screen and (max-width: 850px) {
       align-items: baseline;
       height: auto;
@@ -85,21 +85,20 @@ const ToggleButton = styled.button`
 `;
 
 const App = () => {
-  const [mode, setMode] = useState("light");
-
-  useEffect(() => {
-    generateThemeModeBasedOnTime();
-  }, []);
-
-  const generateThemeModeBasedOnTime = () => {
+  const [ready, setReady] = useState(false);
+  const [mode, setMode] = useState(() => {
     const date = new Date();
     const curTime = date.getHours();
-    if (curTime < 17) {
-      setMode("light");
+    if (curTime > 5 && curTime < 17) {
+      return "light";
     } else {
-      setMode("dark");
+      return "dark";
     }
-  };
+  });
+
+  useEffect(() => {
+    setReady(true);
+  }, []);
 
   const toggleMode = () => {
     mode === "light" ? setMode("dark") : setMode("light");
@@ -108,7 +107,7 @@ const App = () => {
   return (
     <>
       <ThemeProvider theme={mode === "light" ? themeObj.light : themeObj.dark}>
-        <GlobalStyle />
+        <GlobalStyle ready={ready} />
         <ToggleButton onClick={toggleMode}>
           <FontAwesomeIcon icon={mode === "light" ? faSun : faMoon} size="2x" />
         </ToggleButton>

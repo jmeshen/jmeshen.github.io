@@ -39945,10 +39945,12 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var GlobalStyle = (0, _styledComponents.createGlobalStyle)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  ", "\n  h1, h2, h3, h4, h5, h6 {\n    font-family: 'Lato', sans-serif;\n  }\n  p {\n    line-height: 1.7;\n  }\n  body {\n    font-family: 'Roboto Slab', sans-serif;\n    color: ", ";\n    background: ", ";\n    height: 100vh;\n    margin: 0;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    transition: .3s;\n    @media only screen and (max-width: 850px) {\n      align-items: baseline;\n      height: auto;\n    }\n  }\n  a {\n    text-decoration: none;\n    color: ", ";\n    transition: .3s;\n    &:hover {\n    color: coral; \n    transform: translateY(-3px);\n    }\n  }\n"])), _styledNormalize.default, function (props) {
+var GlobalStyle = (0, _styledComponents.createGlobalStyle)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  ", "\n  h1, h2, h3, h4, h5, h6 {\n    font-family: 'Lato', sans-serif;\n  }\n  p {\n    line-height: 1.7;\n  }\n  body {\n    font-family: 'Roboto Slab', sans-serif;\n    color: ", ";\n    background: ", ";\n    height: 100vh;\n    margin: 0;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    transition: ", ";\n    @media only screen and (max-width: 850px) {\n      align-items: baseline;\n      height: auto;\n    }\n  }\n  a {\n    text-decoration: none;\n    color: ", ";\n    transition: .3s;\n    &:hover {\n    color: coral; \n    transform: translateY(-3px);\n    }\n  }\n"])), _styledNormalize.default, function (props) {
   return props.theme.text;
 }, function (props) {
   return props.theme.bg;
+}, function (props) {
+  return "".concat(props.ready ? "0.3s" : "0s", " ease");
 }, function (props) {
   return "".concat(props.theme.accent, "AA");
 });
@@ -39971,25 +39973,28 @@ var ToggleButton = _styledComponents.default.button(_templateObject3 || (_templa
 });
 
 var App = function App() {
-  var _useState = (0, _react.useState)("light"),
+  var _useState = (0, _react.useState)(false),
       _useState2 = _slicedToArray(_useState, 2),
-      mode = _useState2[0],
-      setMode = _useState2[1];
+      ready = _useState2[0],
+      setReady = _useState2[1];
 
-  (0, _react.useEffect)(function () {
-    generateThemeModeBasedOnTime();
-  }, []);
-
-  var generateThemeModeBasedOnTime = function generateThemeModeBasedOnTime() {
+  var _useState3 = (0, _react.useState)(function () {
     var date = new Date();
     var curTime = date.getHours();
 
-    if (curTime < 17) {
-      setMode("light");
+    if (curTime > 5 && curTime < 17) {
+      return "light";
     } else {
-      setMode("dark");
+      return "dark";
     }
-  };
+  }),
+      _useState4 = _slicedToArray(_useState3, 2),
+      mode = _useState4[0],
+      setMode = _useState4[1];
+
+  (0, _react.useEffect)(function () {
+    setReady(true);
+  }, []);
 
   var toggleMode = function toggleMode() {
     mode === "light" ? setMode("dark") : setMode("light");
@@ -39997,7 +40002,9 @@ var App = function App() {
 
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_styledComponents.ThemeProvider, {
     theme: mode === "light" ? themeObj.light : themeObj.dark
-  }, /*#__PURE__*/_react.default.createElement(GlobalStyle, null), /*#__PURE__*/_react.default.createElement(ToggleButton, {
+  }, /*#__PURE__*/_react.default.createElement(GlobalStyle, {
+    ready: ready
+  }), /*#__PURE__*/_react.default.createElement(ToggleButton, {
     onClick: toggleMode
   }, /*#__PURE__*/_react.default.createElement(_reactFontawesome.FontAwesomeIcon, {
     icon: mode === "light" ? _freeRegularSvgIcons.faSun : _freeRegularSvgIcons.faMoon,
@@ -40049,7 +40056,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51623" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54481" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
